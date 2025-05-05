@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 1 Code</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f9f9f9;
+      }
+      header {
+        background-color: #222;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      h2 {
+        text-align: center;
+      }
+      .github-link {
+        font-size: 16px;
+        color: #007bff;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .github-link:hover {
+        text-decoration: underline;
+      }
+
+      pre {
+        margin: 0 30px;
+        padding: 15px;
+        background-color: #eee;
+        border-radius: 5px;
+        overflow-x: auto;
+        position: relative;
+      }
+
+      .file-name-inside {
+        font-weight: bold;
+        font-size: 14px;
+        color: #555;
+        display: block;
+        margin-bottom: 8px;
+      }
+    </style>
+    <!-- Highlight.js stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <h2>Task 2 Code</h2>
+    <a
+      class="github-link"
+      href="https://github.com/yourgithubuser/task2"
+      target="_blank"
+      >View on GitHub</a
+    >
+
+    <pre><code class="language-cpp">
+    <span class="file-name-inside">Filename: main.cpp</span>
+    #include &lt;iostream&gt;
+    using namespace std;
+    
+    int findMax(int arr[], int n) {
+        int maxVal = arr[0];
+        for (int i = 1; i &lt; n; i++) {
+            if (arr[i] &gt; maxVal) maxVal = arr[i];
+        }
+        return maxVal;
+    }
+    
+    int main() {
+        int arr[] = {5, 12, 3, 9, 20, 7};
+        int size = sizeof(arr) / sizeof(arr[0]);
+        cout &lt;&lt; "Max value: " &lt;&lt; findMax(arr, size) &lt;&lt; endl;
+        return 0;
+    }
+    </code></pre>
+
+    <!-- Highlight.js script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

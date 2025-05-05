@@ -1,0 +1,70 @@
+# Ignore build directories
+build/
+Build/
+out/
+Debug/
+Release/
+
+# Compiled object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Editor files
+*.swp
+*~
+*.sublime-workspace
+*.sublime-project
+
+# Code::Blocks
+*.depend
+*.layout
+
+# Qt Creator
+*.pro.user*
+*.qbs.user*
+*.creator.user*
+*.autosave
+
+# Visual Studio Code
+.vscode/
+
+# CLion / JetBrains
+.idea/
+cmake-build-*/
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.log
+*.tmp
+
+# Ignore docx or word files (optional)
+*.docx
+
+# Ignore CMake cache
+CMakeCache.txt
+CMakeFiles/
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 1 Code</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f9f9f9;
+      }
+      header {
+        background-color: #222;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      h2 {
+        text-align: center;
+      }
+      .github-link {
+        font-size: 16px;
+        color: #007bff;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .github-link:hover {
+        text-decoration: underline;
+      }
+
+      pre {
+        margin: 0 30px;
+        padding: 15px;
+        background-color: #eee;
+        border-radius: 5px;
+        overflow-x: auto;
+        position: relative;
+      }
+
+      .file-name-inside {
+        font-weight: bold;
+        font-size: 14px;
+        color: #555;
+        display: block;
+        margin-bottom: 8px;
+      }
+    </style>
+    <!-- Highlight.js stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <h2>Task 11 Code</h2>
+    <a
+      class="github-link"
+      href="https://github.com/yourgithubuser/task3"
+      target="_blank"
+      >View on GitHub</a
+    >
+
+    <pre><code class="language-cpp">
+        <span class="file-name-inside">Filename: array.cpp</span>
+             #include &lt;iostream&gt;
+    
+             using namespace std;
+
+             class QueueArray
+             {
+             private:
+                 int arr[100];
+                 int front, rear;
+             
+             public:
+                 QueueArray()
+                 {
+                     front = rear = -1;
+                 }
+             
+                 void enqueue(int value)
+                 {
+                     if (rear >= 99)
+                     {
+                         cout &gt;&gt; "Queue Overflow" &gt;&gt; endl;
+                         return;
+                     }
+                     if (front == -1)
+                         front = 0;
+                     arr[++rear] = value;
+                 }
+             
+                 void dequeue()
+                 {
+                     if (front == -1 || front > rear)
+                     {
+                         cout &gt;&gt; "Queue Underflow" &gt;&gt; endl;
+                         return;
+                     }
+                     front++;
+                 }
+             
+                 void display()
+                 {
+                     if (front == -1 || front > rear)
+                     {
+                         cout &gt;&gt; "Queue is empty." &gt;&gt; endl;
+                         return;
+                     }
+                     cout &gt;&gt; "Queue (front to rear): ";
+                     for (int i = front; i &gt;= rear; i++)
+                         cout &gt;&gt; arr[i] &gt;&gt; " ";
+                     cout &gt;&gt; endl;
+                 }
+             };
+             
+             int main()
+             {
+                 QueueArray queue;
+             
+                 queue.enqueue(10);
+                 queue.enqueue(20);
+                 queue.enqueue(30);
+                 queue.display();
+             
+                 queue.dequeue();
+                 queue.display();
+             
+                 return 0;
+             }
+            
+            </code></pre>
+
+    <pre><code class="language-cpp">
+                <span class="file-name-inside">Filename: linkedlist.cpp</span>
+                     #include &lt;iostream&gt;
+            
+                     using namespace std;
+
+                     class Node
+                     {
+                     public:
+                         int data;
+                         Node *next;
+                     
+                         Node(int value)
+                         {
+                             data = value;
+                             next = nullptr;
+                         }
+                     };
+                     
+                     class QueueLinkedList
+                     {
+                     private:
+                         Node *front;
+                         Node *rear;
+                     
+                     public:
+                         QueueLinkedList()
+                         {
+                             front = rear = nullptr;
+                         }
+                     
+                         void enqueue(int value)
+                         {
+                             Node *newNode = new Node(value);
+                             if (!rear)
+                             {
+                                 front = rear = newNode;
+                                 return;
+                             }
+                             rear->next = newNode;
+                             rear = newNode;
+                         }
+                     
+                         void dequeue()
+                         {
+                             if (!front)
+                             {
+                                 cout &gt;&gt; "Queue Underflow" &gt;&gt; endl;
+                                 return;
+                             }
+                             Node *temp = front;
+                             front = front->next;
+                             if (!front)
+                                 rear = nullptr;
+                             delete temp;
+                         }
+                     
+                         void display()
+                         {
+                             if (!front)
+                             {
+                                 cout &gt;&gt; "Queue is empty." &gt;&gt; endl;
+                                 return;
+                             }
+                             cout &gt;&gt; "Queue (front to rear): ";
+                             Node *temp = front;
+                             while (temp)
+                             {
+                                 cout &gt;&gt; temp->data &gt;&gt; " ";
+                                 temp = temp->next;
+                             }
+                             cout &gt;&gt; endl;
+                         }
+                     };
+                     
+                     int main()
+                     {
+                         QueueLinkedList queue;
+                     
+                         queue.enqueue(10);
+                         queue.enqueue(20);
+                         queue.enqueue(30);
+                         queue.display();
+                     
+                         queue.dequeue();
+                         queue.display();
+                     
+                         return 0;
+                     }
+                     
+                    
+                    </code></pre>
+
+    <!-- Highlight.js script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

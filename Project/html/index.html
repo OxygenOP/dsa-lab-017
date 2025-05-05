@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home | C++ Web Server</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f9f9f9;
+      }
+      header {
+        background-color: #222;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .content {
+        padding: 30px;
+        text-align: center;
+      }
+
+      .hero {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+      .card {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+        transition: transform 0.2s;
+        cursor: pointer;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .github-link {
+        display: block;
+        margin-top: 10px;
+        color: #007bff;
+        text-decoration: none;
+      }
+      .github-link:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        background-color: #222;
+        color: #fff;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+    <div class="content">
+      <div class="hero">Welcome to My C++ Web Server</div>
+      <p>
+        Click on a task to view its code. Visit the GitHub link to see the
+        repository.
+      </p>
+
+      <div class="grid">
+        <!-- 9 Cards -->
+        <!-- Example Card -->
+        <div class="card" onclick="window.location.href='/task1'">
+          <h3>Task 1</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task1"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task2'">
+          <h3>Task 2</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task2"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task3'">
+          <h3>Task 3</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task3"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task4'">
+          <h3>Task 4</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task4"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task5'">
+          <h3>Task 5</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task5"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task6'">
+          <h3>Task 6</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task6"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task7'">
+          <h3>Task 7</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task7"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task8'">
+          <h3>Task 8</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task8"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task9'">
+          <h3>Task 9</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task9"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+
+        <div class="card" onclick="window.location.href='/task10'">
+          <h3>Task 10</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task9"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+        <div class="card" onclick="window.location.href='/task11'">
+          <h3>Task 11</h3>
+          <a
+            class="github-link"
+            href="https://github.com/yourgithubuser/task9"
+            target="_blank"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- <footer>&copy; 2025 My C++ Web Server Project</footer> -->
+  </body>
+</html>

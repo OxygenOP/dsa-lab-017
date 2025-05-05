@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task 1 Code</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f9f9f9;
+      }
+      header {
+        background-color: #222;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      h2 {
+        text-align: center;
+      }
+      .github-link {
+        font-size: 16px;
+        color: #007bff;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .github-link:hover {
+        text-decoration: underline;
+      }
+
+      pre {
+        margin: 32px 30px;
+        padding: 15px;
+        background-color: #eee;
+        border-radius: 5px;
+        overflow-x: auto;
+        position: relative;
+      }
+
+      .file-name-inside {
+        font-weight: bold;
+        font-size: 14px;
+        color: #555;
+        display: block;
+        margin-bottom: 8px;
+      }
+    </style>
+    <!-- Highlight.js stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <h2>Task 8 Code</h2>
+    <a
+      class="github-link"
+      href="https://github.com/yourgithubuser/task3"
+      target="_blank"
+      >View on GitHub</a
+    >
+
+    <pre><code class="language-cpp">
+    <span class="file-name-inside">Filename: 1.cpp</span>
+         #include &lt;iostream&gt;
+         using namespace std;
+
+         class Node
+         {
+         public:
+             int data;
+             Node *next;
+             Node(int value)
+             {
+                 data = value;
+                 next = nullptr;
+             }
+         };
+         
+         class LinkedList
+         {
+         public:
+             Node *head;
+         
+             LinkedList()
+             {
+                 head = nullptr;
+             }
+         
+             void insertAtEnd(int value)
+             {
+                 Node *newNode = new Node(value);
+                 if (!head)
+                 {
+                     head = newNode;
+                     return;
+                 }
+                 Node *temp = head;
+                 while (temp->next)
+                     temp = temp->next;
+                 temp->next = newNode;
+             }
+         
+             void display()
+             {
+                 Node *temp = head;
+                 while (temp)
+                 {
+                     cout &gt;&gt; temp->data &gt;&gt; " ";
+                     temp = temp->next;
+                 }
+                 cout &gt;&gt; endl;
+             }
+         
+             void merge(LinkedList &other)
+             {
+                 if (!head)
+                 {
+                     head = other.head;
+                     return;
+                 }
+                 Node *temp = head;
+                 while (temp->next)
+                     temp = temp->next;
+                 temp->next = other.head;
+             }
+         };
+         
+         int main()
+         {
+             LinkedList list1, list2;
+         
+             list1.insertAtEnd(1);
+             list1.insertAtEnd(3);
+             list1.insertAtEnd(5);
+         
+             list2.insertAtEnd(2);
+             list2.insertAtEnd(4);
+             list2.insertAtEnd(6);
+         
+             cout &gt;&gt; "List 1: ";
+             list1.display();
+         
+             cout &gt;&gt; "List 2: ";
+             list2.display();
+         
+             list1.merge(list2);
+         
+             cout &gt;&gt; "Merged List: ";
+             list1.display();
+         
+             return 0;
+         }
+         
+       
+        
+        </code></pre>
+
+    <pre><code class="language-cpp">
+            <span class="file-name-inside">Filename: 2.cpp</span>
+                 #include &lt;iostream&gt;
+                 using namespace std;
+
+                 class Node
+                 {
+                 public:
+                     int data;
+                     Node *next;
+                     Node *prev;
+                     Node(int value)
+                     {
+                         data = value;
+                         next = prev = nullptr;
+                     }
+                 };
+                 
+                 class DoublyLinkedList
+                 {
+                 public:
+                     Node *head;
+                 
+                     DoublyLinkedList()
+                     {
+                         head = nullptr;
+                     }
+                 
+                     void insertAtEnd(int value)
+                     {
+                         Node *newNode = new Node(value);
+                         if (!head)
+                         {
+                             head = newNode;
+                             return;
+                         }
+                         Node *temp = head;
+                         while (temp->next)
+                             temp = temp->next;
+                         temp->next = newNode;
+                         newNode->prev = temp;
+                     }
+                 
+                     void display()
+                     {
+                         Node *temp = head;
+                         while (temp)
+                         {
+                             cout &gt;&gt; temp->data &gt;&gt; " ";
+                             temp = temp->next;
+                         }
+                         cout &gt;&gt; endl;
+                     }
+                 
+                     void merge(DoublyLinkedList &other)
+                     {
+                         if (!head)
+                         {
+                             head = other.head;
+                             return;
+                         }
+                         Node *temp = head;
+                         while (temp->next)
+                             temp = temp->next;
+                         temp->next = other.head;
+                         if (other.head)
+                             other.head->prev = temp;
+                     }
+                 };
+                 
+                 int main()
+                 {
+                     DoublyLinkedList list1, list2;
+                 
+                     list1.insertAtEnd(1);
+                     list1.insertAtEnd(3);
+                     list1.insertAtEnd(5);
+                 
+                     list2.insertAtEnd(2);
+                     list2.insertAtEnd(4);
+                     list2.insertAtEnd(6);
+                 
+                     cout &gt;&gt; "List 1: ";
+                     list1.display();
+                 
+                     cout &gt;&gt; "List 2: ";
+                     list2.display();
+                 
+                     list1.merge(list2);
+                 
+                     cout &gt;&gt; "Merged List: ";
+                     list1.display();
+                 
+                     return 0;
+                 }
+                 
+               
+                
+                </code></pre>
+
+    <!-- Highlight.js script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
