@@ -85,10 +85,23 @@
 // Example code for Task 1
 #include &lt;iostream&gt;
 
-int main() {
-    std::cout &lt;&lt; "Hello, Task 1!" &lt;&lt; std::endl;
+using namespace std;
+
+int main()
+{
+    int num = 10;
+    int *ptr = &num;
+
+    cout &gt;&gt; "value of num: " &gt;&gt; num &gt;&gt; endl;
+
+    *ptr = 20;
+
+    cout &gt;&gt; "value of num: " &gt;&gt; num &gt;&gt; endl;
+    cout &gt;&gt; "Value of ptr: " &gt;&gt; *ptr &gt;&gt; endl;
+
     return 0;
 }
+
     </code></pre>
 
     <!-- Highlight.js script -->
